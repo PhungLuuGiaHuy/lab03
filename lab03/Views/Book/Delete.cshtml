@@ -1,0 +1,64 @@
+﻿@model lab03.Models.book
+
+@{
+    ViewBag.Title = "DeleteBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteBook</h2>
+
+div>
+<h4>Book</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.tilte)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.tilte)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.author)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.author)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.descripstion)
+    </dt>
+
+    <dd>
+        <textarea>
+                @Html.DisplayFor(model => model.descripstion)
+            </textarea>
+
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.img)
+    </dt>
+
+    <dd>
+        <img src="@Model.img" width="50" />
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.price)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.price)
+    </dd>
+
+</dl>
+</div>
+<p>
+
+    @using (Html.BeginForm("DeleteBook", "Book", new { id = Model.id }, FormMethod.Post))
+    {
+        <input type="submit" value="Delete" class="btn btn-default" />}
+</p>
